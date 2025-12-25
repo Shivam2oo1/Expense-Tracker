@@ -1,9 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h1>GitHub Pages is Working 🚀</h1>
+<!-- Top Navbar -->
+<div class="navbar">
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <span class="nav-title">Expense Tracker</span>
+</div>
+
+<!-- Hidden Side Menu -->
+<div id="sideMenu" class="side-menu">
+    <a href="#">Login</a>
+    <a href="#">Register</a>
+    <a href="#">Accounts</a>
+    <a href="#">Settings</a>
+    <a href="#">Pro Version</a>
+
+    <!-- About toggle -->
+<a href="#" onclick="toggleAbout()">About Us</a>
+
+<div id="aboutDetails" class="about-details">
+    <p><strong>Developer:</strong> Shivam & Neha</p>
+    <p><strong>Role:</strong> MCA Student / Web Developer</p>
+    <p><strong>Location:</strong> TIT Bhopal, India</p>
+
+    <!-- Contact toggle -->
+    <p class="contact-link" onclick="toggleContact()">📞 Contact Us</p>
+
+    <!-- Contact details -->
+    <div id="contactDetails" class="contact-details">
+        <p>📧 Email: shivamkumar4101@email.com</p>
+        <p>📱 Phone: +91 87090 52208</p>
+        <p>📍 Address: Patna, Bihar, India</p>
+    </div>
+</div>
+</div>
+
+
+ <!-- <h1>💸 Expense Tracker</h1> -->
+  <p>Track daily expenses with a clear overview</p>
+<div class="wallet-container">
+    <h1 class="wallet-heading">My Wallet</h1>
+
+    <div class="wallet-cards">
+        <div class="wallet-card balance-card">
+            <p>TOTAL BALANCE LEFT</p>
+            <h2>Rs <span id="balance">0</span></h2>
+        </div>
+
+        <div class="wallet-card income-card">
+            <p>INCOME</p>
+            <h2>+Rs <span id="income">0</span></h2>
+        </div>
+
+        <div class="wallet-card expense-card">
+            <p>EXPENSES</p>
+            <h2>-Rs <span id="expenses">0</span></h2>
+        </div>
+    </div>
+</div>
+  <div class="grid">
+    <!-- Form -->
+    <div class="card">
+      <h3>Add Expense</h3>
+      <label>Date</label>
+      <input type="date" id="date" />
+
+      <label>Amount</label>
+      <input type="number" id="amount" placeholder="Enter amount" />
+
+      <label>Category</label>
+      <select id="category">
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Shopping</option>
+        <option>Rent</option>
+        <option>Entertainment</option>
+        <option>Other</option>
+      </select>
+<label>Type</label>
+<select id="type">
+    <option value="expense">Expense</option>
+    <option value="income">Income</option>
+</select>
+      <label>Description</label>
+      <textarea id="description" rows="2" placeholder="Optional note"></textarea>
+
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <!-- Chart -->
+    <div class="card">
+      <h3>Expense Overview</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="card" style="margin-top:24px">
+    <h3>History</h3>
+    <table>
+      <thead>
+  <tr>
+    <th>Date</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Amount</th>
+  </tr>
+</thead>
+      <tbody id="history"></tbody>
+    </table>
+  </div>
+  <script src="app.js"></script>
+</body>
 </body>
 </html>

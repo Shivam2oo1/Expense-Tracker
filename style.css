@@ -1,0 +1,242 @@
+:root {
+        html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url("expimg.jpg");
+    background-size: cover;        /* fills full screen */
+    background-position: center;   /* centers image */
+    background-repeat: no-repeat;  /* no tiling */
+    background-attachment: fixed;  /* optional: stays fixed on scroll */
+    padding-top: 70px;
+}
+      --bg: #0f172a;
+      --card: #111827;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+    }
+    * { box-sizing: border-box; font-family: Inter, system-ui, sans-serif; }
+    body {
+      margin: 0; background: linear-gradient(120deg, #020617, #0f172a);
+      color: var(--text); padding: 32px;
+    }
+    /* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.nav-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Side Menu (Hidden by default) */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px; /* HIDDEN */
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    padding-top: 70px;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.side-menu a:hover {
+    background: #f0f0f0;
+}
+
+/* When menu opens */
+.side-menu.open {
+    left: 0;
+}
+    h1 { margin-bottom: 4px; }
+    p { color: var(--muted); margin-top: 0; }
+    .grid {
+      display: grid; gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 2opx;
+    }
+    .card {
+      background: rgba(17,24,39,.85);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    }
+    label { font-size: 14px; color: var(--muted); }
+    input, select, textarea {
+      width: 100%; margin-top: 6px; margin-bottom: 14px;
+      padding: 10px 12px; border-radius: 10px;
+      border: none; outline: none;
+      background: #020617; color: var(--text);
+    }
+    button {
+      width: 100%; padding: 12px;
+      border-radius: 12px; border: none;
+      background: var(--accent); color: #020617;
+      font-weight: 600; cursor: pointer;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 10px; text-align: left; }
+    th { color: var(--muted); font-size: 13px; }
+    tr:not(:last-child) { border-bottom: 1px solid #1f2933; }
+    canvas { max-height: 260px; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .wallet-container {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.wallet-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.wallet-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.wallet-card {
+    width: 260px;
+    padding: 22px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.wallet-card p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.wallet-card h2 {
+    font-size: 28px;
+}
+
+/* Exact color style from image */
+.balance-card {
+    background: #923e9f;
+    color: #fff;
+}
+
+.income-card {
+    color: #0f9d58;
+}
+
+.expense-card {
+    color: #d93025;
+}
+@media (max-width: 768px) {
+
+    body {
+        padding: 16px;
+    }
+
+    /* Keep same grid behavior, just stack */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Wallet cards remain SAME style, just smaller */
+    .wallet-cards {
+        gap: 16px;
+    }
+
+    .wallet-card {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .wallet-heading {
+        font-size: 26px;
+    }
+
+    .wallet-card h2 {
+        font-size: 22px;
+    }
+
+    .wallet-card p {
+        font-size: 13px;
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 18px; }
+
+    input, select, textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+.about-details {
+    display: none;
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #111;
+    border-top: 1px solid #ddd;
+    background: #f9f9f9;
+}
+.contact-link {
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2563eb;
+}
+
+.contact-details {
+    display: none;
+    margin-top: 8px;
+    padding-left: 10px;
+    font-size: 13px;
+    color: #333;
+}
